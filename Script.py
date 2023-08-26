@@ -7,7 +7,9 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : {}</b>
 <b>✯ Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/fligher>☢ Owner of TrumBots ☢</a></b>
+
 <b>✯ Uᴘᴅᴀᴛᴇs : <a href=https://t.me/movie_time_botonly>TrumBots Updates 👾</a></b>
+
 <b>✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ2.0.62 [Sᴛᴀʙʟᴇ]</b>"""
 
     SOURCE_TXT = """
@@ -99,12 +101,12 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 ★ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code>
 ★ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code></b>"""
 
-    LOG_TEXT_G = """#NewGroup
+    LOG_TEXT_G = """#NewGroupforNewBot
 Gʀᴏᴜᴘ = {}(<code>{}</code>)
 Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
 Aᴅᴅᴇᴅ Bʏ - {}"""
 
-    LOG_TEXT_P = """#NewUserForTamil
+    LOG_TEXT_P = """#NewUserForNewBot
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
 
@@ -143,7 +145,7 @@ Nᴀᴍᴇ - {}"""
     MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
 
     SHORTLINK_INFO = """
-<b>──────「<a href=https://t.me/TeamHMT_Bots/44> Hᴏᴡ ᴛᴏ Eᴀʀɴ Mᴏɴᴇʏ </a> 」──────
+<b>──────「 Hᴏᴡ ᴛᴏ Eᴀʀɴ Mᴏɴᴇʏ 」──────
 
 Yᴏᴜ ᴄᴀɴ Eᴀʀɴ Mᴏɴᴇʏ Fʀᴏᴍ Tʜɪs Bᴏᴛ Uɴᴛɪʟ ᴛʜɪs ʙᴏᴛ ɪs ᴀʟɪᴠᴇ.
 
@@ -151,9 +153,9 @@ Wᴀɴᴛ ᴛᴏ Kɴᴏᴡ Hᴏᴡ? Fᴏʟʟᴏᴡ Tʜᴇsᴇ Sᴛᴇᴘs:-
 
 sᴛᴇᴘ 𝟷 : ʏᴏᴜ ᴍᴜsᴛ ʜᴀᴠᴇ ᴀᴛʟᴇᴀsᴛ ᴏɴᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴍɪɴɪᴍᴜᴍ 1𝟶𝟶 ᴍᴇᴍʙᴇʀs.
 
-sᴛᴇᴘ 𝟸 : ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ Aɴʏ <a href=https://mplaylink.com/ref/106324576666323105902>Sʜᴏʀᴛᴇɴᴇʀ Wᴇʙsɪᴛᴇ</a>.
+sᴛᴇᴘ 𝟸 : ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ Aɴʏ Sʜᴏʀᴛᴇɴᴇʀ Wᴇʙsɪᴛᴇ
 
-sᴛᴇᴘ 𝟹 : ꜰᴏʟʟᴏᴡ ᴛʜᴇsᴇ <a href=https://t.me/TeamHMT_Bots/44> ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ </a>Tᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛᴇɴᴇʀ.
+sᴛᴇᴘ 𝟹 : Use /shortlink <shortnerwebsite> <shortnerapi>Tᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛᴇɴᴇʀ.
 
 ➣ Yᴏᴜ ᴄᴀɴ ᴄᴏɴɴᴇᴄᴛ ᴀs ᴍᴀɴʏ ɢʀᴏᴜᴘ ʏᴏᴜ ʜᴀᴠᴇ.
 
@@ -194,10 +196,10 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b>📂Fɪʟᴇɴᴀᴍᴇ : {file_name}
+    CAPTION = """<b>📂Fɪʟᴇɴᴀᴍᴇ : <a href='https://t.me/movie_time_botonly'>{file_name}</a>
 ╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ════╗
-▫️<a href=https://t.me/+pl4rB-xx8ltlOTE1> ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ </a>
-▫️<a href=https://t.me/+ps2An00KwZYwNTRl> ʀᴇǫᴜᴇsᴛ ᴍᴏᴠɪᴇs​ </a>
+▫️<a href=https://t.me/movie_request_hub> ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ </a>
+▫️<a href=https://t.me/mcumoviesr> Marvel & DC Movies​ </a>
 ╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ════╝</b>""" 
 
     IMDB_TEMPLATE_TXT = """
@@ -209,8 +211,9 @@ IMDb Data:
 🎭 Genres: {genres}
 📆 Year: <a href={url}/releaseinfo>{year}</a>
 ⏱️ Result Shown in: {remaining_seconds} <i>seconds</i> 🔥
-🌟 Rating: <a href={url}/ratings>{rating}</a> / 10</b>"""
-    
+🌟 Rating: <a href={url}/ratings>{rating}</a> / 10</b>
+🏆 Developed By : <a href='https://t.me/movie_time_botonly'>Trumbots</a>"""
+
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
     
