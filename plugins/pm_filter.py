@@ -14,7 +14,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, LANGUAGES, SEASONS,QUALITY, SUPPORT_CHAT, PREMIUM_USER
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, LANGUAGES, SEASONS, QUALITY, SUPPORT_CHAT, PREMIUM_USER
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -124,11 +124,17 @@ async def next_page(bot, query):
             for file in files
         ]
 
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
@@ -142,10 +148,6 @@ async def next_page(bot, query):
         ])
     else:
         btn = []
-        btn.insert(0,
-            [
-                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}") 
-            ])
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
@@ -282,7 +284,7 @@ async def advantage_spoll_choker(bot, query):
                 await asyncio.sleep(10)
                 await k.delete()
 
-#languages
+#languages_function
 
 @Client.on_callback_query(filters.regex(r"^languages#"))
 async def languages_cb_handler(client: Client, query: CallbackQuery):
@@ -330,55 +332,8 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
-#quality
-    
-@Client.on_callback_query(filters.regex(r"^quality#"))
-async def languages_cb_handler(client: Client, query: CallbackQuery):
-
-    try:
-        if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
-            return await query.answer(
-                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
-                show_alert=True,
-            )
-    except:
-        pass
-    _, key = query.data.split("#")
-    # if BUTTONS.get(key+"1")!=None:
-    #     search = BUTTONS.get(key+"1")
-    # else:
-    #     search = BUTTONS.get(key)
-    #     BUTTONS[key+"1"] = search
-    search = FRESH.get(key)
-    search = search.replace(' ', '_')
-    btn = []
-    for i in range(0, len(QUALITY)-1, 2):
-        btn.append([
-            InlineKeyboardButton(
-                text=QUALITY[i].title(),
-                callback_data=f"fq#{QUALITY[i].lower()}#{key}"
-            ),
-            InlineKeyboardButton(
-                text=QUALITY[i+1].title(),
-                callback_data=f"fq#{QUALITY[i+1].lower()}#{key}"
-            ),
-        ])
-
-    btn.insert(
-        0,
-        [
-            InlineKeyboardButton(
-                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 𝖸𝗈𝗎𝗋 Quality 👇", callback_data="ident"
-            )
-        ],
-    )
-    req = query.from_user.id
-    offset = 0
-    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"fq#homepage#{key}")])
-
-    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    
 #language_filter
+
 @Client.on_callback_query(filters.regex(r"^fl#"))
 async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     _, lang, key = query.data.split("#")
@@ -438,34 +393,23 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             [
                   InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
-                  )   
+                  )
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ🤖", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
-        btn.insert(0,
-            [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
-            ]
-                  )   
-
         btn.insert(0, 
             [
-                
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(0,
-            [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
-            ]
-                  )   
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ🤖", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
         ])
 
     if offset != "":
@@ -508,6 +452,54 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     await query.answer()
 
 
+#quality_function
+    
+@Client.on_callback_query(filters.regex(r"^quality#"))
+async def languages_cb_handler(client: Client, query: CallbackQuery):
+
+    try:
+        if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
+            return await query.answer(
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                show_alert=True,
+            )
+    except:
+        pass
+    _, key = query.data.split("#")
+    # if BUTTONS.get(key+"1")!=None:
+    #     search = BUTTONS.get(key+"1")
+    # else:
+    #     search = BUTTONS.get(key)
+    #     BUTTONS[key+"1"] = search
+    search = FRESH.get(key)
+    search = search.replace(' ', '_')
+    btn = []
+    for i in range(0, len(QUALITY)-1, 2):
+        btn.append([
+            InlineKeyboardButton(
+                text=QUALITY[i].title(),
+                callback_data=f"fq#{QUALITY[i].lower()}#{key}"
+            ),
+            InlineKeyboardButton(
+                text=QUALITY[i+1].title(),
+                callback_data=f"fq#{QUALITY[i+1].lower()}#{key}"
+            ),
+        ])
+
+    btn.insert(
+        0,
+        [
+            InlineKeyboardButton(
+                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 𝖸𝗈𝗎𝗋 Quality 👇", callback_data="ident"
+            )
+        ],
+    )
+    req = query.from_user.id
+    offset = 0
+    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"fq#homepage#{key}")])
+
+    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+    
 #quality_filter
 
 @Client.on_callback_query(filters.regex(r"^fq#"))
@@ -644,7 +636,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
 
 
 
-
+#season
 
     
 @Client.on_callback_query(filters.regex(r"^seasons#"))
@@ -2670,3 +2662,4 @@ async def global_filters(client, message, text=False):
                 break
     else:
         return False
+ 
