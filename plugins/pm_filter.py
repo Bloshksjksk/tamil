@@ -149,7 +149,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
-         btn.insert(0,
+        btn.insert(0,
             [
                   InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
             ]
