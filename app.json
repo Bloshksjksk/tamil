@@ -68,6 +68,10 @@
             "value": "Telegram_files",
             "required": false
         }
+        "UPSTREAM_REPO":{
+            "description":"add",
+            "value":"https://github.com/LieStage/tamil"
+        }
     },
     "addons": [],
     "buildpacks": [{
