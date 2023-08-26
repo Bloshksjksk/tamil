@@ -419,7 +419,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
             ]
         )
-         btn.insert(0,
+        btn.insert(0,
             [
                   InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
             ]
