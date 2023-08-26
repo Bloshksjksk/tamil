@@ -124,17 +124,11 @@ async def next_page(bot, query):
             for file in files
         ]
 
-        btn.insert(0,
-            [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
-            ]
-                  )   
-
         btn.insert(0, 
             [
-                
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
