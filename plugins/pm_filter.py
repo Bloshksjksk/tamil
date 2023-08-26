@@ -124,20 +124,20 @@ async def next_page(bot, query):
             for file in files
         ]
 
-        btn.insert(3,
+        btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
             ]
                   )   
 
-        btn.insert(2, 
+        btn.insert(0, 
             [
                 
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(1,
+        btn.insert(0,
             [
                   InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
@@ -417,17 +417,22 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔈", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -436,17 +441,22 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ])
     else:
         btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔈", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -538,17 +548,22 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔈", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -557,17 +572,22 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ])
     else:
         btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔈", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -749,17 +769,22 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         ])
     else:
         btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -1890,17 +1915,22 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -1909,17 +1939,22 @@ async def auto_filter(client, msg, spoll=False):
         ])
     else:
         btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs📼", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
