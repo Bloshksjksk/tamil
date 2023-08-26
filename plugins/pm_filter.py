@@ -124,16 +124,22 @@ async def next_page(bot, query):
             for file in files
         ]
 
-        btn.insert(0, 
+        btn.insert(3,
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
+        btn.insert(2, 
+            [
+                
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
-        btn.insert(0,
+        btn.insert(1,
             [
-                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
             ]
                   )         
         btn.insert(0, [
@@ -148,7 +154,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔈", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
-        )
+        ) 
         btn.insert(0,
             [
                   InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
