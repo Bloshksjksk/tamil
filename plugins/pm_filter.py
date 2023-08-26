@@ -126,14 +126,14 @@ async def next_page(bot, query):
 
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"languages#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
             ]
                   )   
 
         btn.insert(0, 
             [
                 
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"quality#{key}"),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
@@ -400,13 +400,24 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ])
     else:
         btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+            ]
+                  )   
+
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
             ]
         )
+        btn.insert(0,
+            [
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+            ]
+                  )
         btn.insert(0, [
             InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
             InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
@@ -455,7 +466,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
 #quality_function
     
 @Client.on_callback_query(filters.regex(r"^quality#"))
-async def languages_cb_handler(client: Client, query: CallbackQuery):
+async def quality_cb_handler(client: Client, query: CallbackQuery):
 
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
@@ -503,7 +514,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
 #quality_filter
 
 @Client.on_callback_query(filters.regex(r"^fq#"))
-async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
+async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
     _, qual, key = query.data.split("#")
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     search = FRESH.get(key)
