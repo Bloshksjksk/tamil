@@ -1892,7 +1892,7 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
             ]
         )
-         btn.insert(0,
+        btn.insert(0,
             [
                   InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
             ]
@@ -1911,7 +1911,7 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")
             ]
         )
-         btn.insert(0,
+        btn.insert(0,
             [
                   InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}")  
             ]
