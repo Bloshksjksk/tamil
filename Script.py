@@ -104,10 +104,12 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
     LOG_TEXT_G = """#NewGroupforNewBot
 Gʀᴏᴜᴘ = {}(<code>{}</code>)
 Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
+<a href=https://t.me/{}>{}</a>
 Aᴅᴅᴇᴅ Bʏ - {}"""
 
     LOG_TEXT_P = """#NewUserForNewBot
 ID - <code>{}</code>
+<a href=https://t.me/{}>{}</a>
 Nᴀᴍᴇ - {}"""
 
     ALRT_TXT = """ʜᴇʟʟᴏ {},
