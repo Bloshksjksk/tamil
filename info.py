@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '4682685'))
 API_HASH = environ.get('API_HASH', '3eba5d471162181b8a3f7f5c0a23c307')
-BOT_TOKEN = environ.get('BOT_TOKEN', "5544919313:AAGInu1jJdrdiNRjDNh2hqk1akzPNu5rfiI")
+BOT_TOKEN = environ.get('BOT_TOKEN', "5379270827:AAFX7Xe7n2J22cD0YnqfV9ajzLGUFNPfkYQ")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -43,9 +43,13 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://fileto:shortlink@cluster0.xbclao5.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "tamil")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+#DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://fileto:shortlink@cluster0.xbclao5.mongodb.net/?retryWrites=true&w=majority")
+#DATABASE_NAME = environ.get('DATABASE_NAME', "tamil")
+#COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://test:ing@cluster0.irwqzhn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "testfiles")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'testfiles')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
@@ -56,7 +60,7 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+90o8iH1W21IwNTY1')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+PBumvx-e43I4ZTE1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/movie_time_botonly')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/redirect_to_lion_stage/7')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
@@ -85,6 +89,7 @@ LANGUAGES = ["malayalam", "mal", "tamil", "tam" ,"english", "eng", "hindi", "hin
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
 QUALITY=["1080p","720p","480p","360p","2160p","4k"]
+
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
 LOG_STR += ("P_TTI_SHOW_OFF found , Users will be redirected to send /start to Bot PM instead of sending file file directly\n" if P_TTI_SHOW_OFF else "P_TTI_SHOW_OFF is disabled files will be send in PM, instead of sending start.\n")
