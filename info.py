@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '4682685'))
 API_HASH = environ.get('API_HASH', '3eba5d471162181b8a3f7f5c0a23c307')
-BOT_TOKEN = environ.get('BOT_TOKEN', "5379270827:AAFX7Xe7n2J22cD0YnqfV9ajzLGUFNPfkYQ")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7085406246:AAEPCephzNno4ypKavnJI6oPXckCCCA-69M")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -61,7 +61,7 @@ MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+PBumvx-e43I4ZTE1')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/movie_time_botonly')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+cxMEEg8YLkUyMTY1')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/redirect_to_lion_stage/7')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
