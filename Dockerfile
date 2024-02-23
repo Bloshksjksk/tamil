@@ -11,4 +11,5 @@ WORKDIR /app
 COPY . .
 
 CMD ["python", "bot.py"]
-EXPOSE 80/tcp
+#EXPOSE 80/tcp
+EXPOSE 80
