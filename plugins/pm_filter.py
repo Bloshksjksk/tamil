@@ -14,7 +14,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, LANGUAGES, SEASONS, QUALITY, SUPPORT_CHAT, PREMIUM_USER
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, LANGUAGES, SEASONS, QUALITY, SUPPORT_CHAT, PREMIUM_USER,EPISODES
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -126,7 +126,8 @@ async def next_page(bot, query):
 
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -150,7 +151,8 @@ async def next_page(bot, query):
         btn = []
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -378,7 +380,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -402,7 +405,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -557,7 +561,8 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -581,7 +586,8 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -778,7 +784,8 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -825,6 +832,189 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
     await query.answer()
+
+
+#episodes
+
+
+    
+@Client.on_callback_query(filters.regex(r"^ep#"))
+async def seasons_cb_handler(client: Client, query: CallbackQuery):
+
+    try:
+        if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
+            return await query.answer(
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                show_alert=True,
+            )
+    except:
+        pass
+    
+    _, key = query.data.split("#")
+    # if BUTTONS.get(key+"2")!=None:
+    #     search = BUTTONS.get(key+"2")
+    # else:
+    #     search = BUTTONS.get(key)
+    #     BUTTONS[key+"2"] = search
+    search = FRESH.get(key)
+    BUTTONS[key] = None
+    search = search.replace(' ', '_')
+    btn = []
+    for i in range(0, len(EPISODES)-1, 2):
+        btn.append([
+            InlineKeyboardButton(
+                text=EPISODES[i].title(),
+                callback_data=f"fs#{EPISODES[i].lower()}#{key}"
+            ),
+            InlineKeyboardButton(
+                text=EPISODES[i+1].title(),
+                callback_data=f"fs#{EPISODES[i+1].lower()}#{key}"
+            ),
+        ])
+
+    btn.insert(
+        0,
+        [
+            InlineKeyboardButton(
+                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 Episodes 👇", callback_data="ident"
+            )
+        ],
+    )
+    req = query.from_user.id
+    offset = 0
+    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
+
+    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+
+
+@Client.on_callback_query(filters.regex(r"^ep#"))
+async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
+    _, seas, key = query.data.split("#")
+    curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    search = FRESH.get(key)
+    search = search.replace("_", " ")
+    sea = ""
+    season_search = ["E01","E02","E03","E04","E05","E06","E07","E08","E09","E10","E11","E12","E13","E14","E15","E16","E17","E18","E19","E20","E21","E22","E23","E24","E25","E26","E27","E28","E29","E30","E31","EPISODE 01","EPISODE 02","EPISODE 03","EPISODE 04","EPISODE 05","EPISODE 06","EPISODE 07","EPISODE 08","EPISODE 09","EPISODE 10","EPISODE 11","EPISODE 12","EPISODE 13","EPISODE 14","EPISODE 15","EPISODE 16","EPISODE 17","EPISODE 18","EPISODE 19","EPISODE 20","EPISODE 21","EPISODE 22","EPISODE 23","EPISODE 24","EPISODE 25","EPISODE 26","EPISODE 27","EPISODE 28","EPISODE 29","EPISODE 30"]
+    for x in range (len(season_search)):
+        if season_search[x] in search:
+            sea = season_search[x]
+            break
+    if sea:
+        search = search.replace(sea, "")
+    else:
+        search = search
+    
+    req = query.from_user.id
+    chat_id = query.message.chat.id
+    message = query.message
+    try:
+        if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
+            return await query.answer(
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                show_alert=True,
+            )
+    except:
+        pass
+    
+    searchagn = search
+    search1 = search
+    search2 = search
+    search = f"{search} {seas}"
+    BUTTONS0[key] = search
+    
+    files, _, _ = await get_search_results(chat_id, search, max_results=10)
+    files = [file for file in files if re.search(seas, file.file_name, re.IGNORECASE)]
+    
+    seas1 = "E01" if seas == "EPISODE 01" else "E02" if seas == "EPISODE 02" else "E03" if seas == "EPISODE 03" else "E04" if seas == "EPISODE 04" else "E05" if seas == "EPISODE 05" else "E06" if seas == "EPISODE 06" else "E07" if seas == "EPISODE 07" else "E08" if seas == "EPISODE 08" else "E09" if seas == "EPISODE 09" else "E10" if seas == "EPISODE 10" else "E11" if seas =="EPISODE 11" else "E11" if seas =="EPISODE 12"else "E13" if seas =="EPISODE 13"else "E14" if seas =="EPISODE 14"else "E15" if seas == "EPISODE 15" else "E16" if seas == "EPISODE 16" else "E17" if seas == "EPISODE 17" else "E18" if seas == "EPISODE 18" else "E19" if seas == "EPISODE 19" else "E20" if seas =="EPISODE 21" else "E22" if seas =="EPISODE 22"else "E23" if seas =="EPISODE 23"else "E24" if seas =="EPISODE 24"else "E25" if seas =="EPISODE 25"else "E26" if seas =="EPISODE 26"else "E27" if seas =="EPISODE 27"else "E28" if seas =="EPISODE 28"else "E29" if seas =="EPISODE 29"else "E30" if seas =="EPISODE 30" else""
+    search1 = f"{search1} {seas1}"
+    BUTTONS1[key] = search1
+    files1, _, _ = await get_search_results(chat_id, search1, max_results=10)
+    files1 = [file for file in files1 if re.search(seas1, file.file_name, re.IGNORECASE)]
+    
+    if files1:
+        files.extend(files1)
+    
+   seas2 = "E01" if seas == "EPISODE 01" else "E02" if seas == "EPISODE 02" else "E03" if seas == "EPISODE 03" else "E04" if seas == "EPISODE 04" else "E05" if seas == "EPISODE 05" else "E06" if seas == "EPISODE 06" else "E07" if seas == "EPISODE 07" else "E08" if seas == "EPISODE 08" else "E09" if seas == "EPISODE 09" else "E10" if seas == "EPISODE 10" else "E11" if seas =="EPISODE 11" else "E11" if seas =="EPISODE 12"else "E13" if seas =="EPISODE 13"else "E14" if seas =="EPISODE 14"else "E15" if seas == "EPISODE 15" else "E16" if seas == "EPISODE 16" else "E17" if seas == "EPISODE 17" else "E18" if seas == "EPISODE 18" else "E19" if seas == "EPISODE 19" else "E20" if seas =="EPISODE 21" else "E22" if seas =="EPISODE 22"else "E23" if seas =="EPISODE 23"else "E24" if seas =="EPISODE 24"else "E25" if seas =="EPISODE 25"else "E26" if seas =="EPISODE 26"else "E27" if seas =="EPISODE 27"else "E28" if seas =="EPISODE 28"else "E29" if seas =="EPISODE 29"else "E30" if seas =="EPISODE 30" else "E31"
+    search2 = f"{search2} {seas2}"
+    BUTTONS2[key] = search2
+    files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
+    files2 = [file for file in files2 if re.search(seas2, file.file_name, re.IGNORECASE)]
+
+    if files2:
+        files.extend(files2)
+        
+    if not files:
+        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        return
+    temp.GETALL[key] = files
+    settings = await get_settings(message.chat.id)
+    pre = 'filep' if settings['file_secure'] else 'file'
+    if settings["button"]:
+        btn = [
+            [
+                InlineKeyboardButton(
+                    text=f"[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                ),
+            ]
+            for file in files
+        ]
+        btn.insert(0, [
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}"),
+            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
+        ])
+    else:
+        btn = []
+        btn.insert(0,
+            [
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}"),
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+            ]
+                  )   
+
+        btn.insert(0, 
+            [
+                
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs🔉", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs📼",  callback_data=f"seasons#{key}")
+            ]
+        )
+        btn.insert(0,
+            [
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+            ]
+                  )   
+        btn.insert(0, [
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ🤖", url=f"https://telegram.me/{temp.U_NAME}"),
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}")
+            
+        ])
+        
+    offset = 0
+
+    btn.append([
+            InlineKeyboardButton(
+                text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭",
+                callback_data=f"next_{req}_{key}_{offset}"
+                ),
+    ])
+    
+    if not settings["button"]:
+        cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+        time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
+        remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
+        total_results = len(files)
+        cap = await get_cap(settings, remaining_seconds, files, query, total_results, search)
+        try:
+            await query.message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+        except MessageNotModified:
+            pass
+    else:
+        try:
+            await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
+        except MessageNotModified:
+            pass
+    await query.answer()
+
 
                 
 @Client.on_callback_query()
