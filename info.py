@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '4682685'))
 API_HASH = environ.get('API_HASH', '3eba5d471162181b8a3f7f5c0a23c307')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7085406246:AAEPCephzNno4ypKavnJI6oPXckCCCA-69M")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7085406246:AAFeeHZ48_DP6lXw-g6-xnDrMKiC39DxUso")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -47,22 +47,22 @@ NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 #DATABASE_NAME = environ.get('DATABASE_NAME', "tamil")
 #COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://test:ing@cluster0.irwqzhn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://ft:Q5W6QD4HY1QGh5JN@cluster0.c1zu1o3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "testfiles")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'testfiles')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'paisakamalo.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '9d7e32c571c44b3ee91a814fa25c31e0211f5aeb')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'urllinkshort.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'a7c8ec9f5071ca0bfd20f287cf6ab31e5232947e')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
-PORT = environ.get("PORT", "8080")
+PORT = environ.get("PORT", "8000")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+PBumvx-e43I4ZTE1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+cxMEEg8YLkUyMTY1')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/redirect_to_lion_stage/7')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/redirect_to_lion_stage/16')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001523402210'))
@@ -90,8 +90,7 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 
 QUALITY=["1080p","720p","480p","360p","2160p","4k"]
 
-EPISODES=["E01","E02","E03","E04","E05","E06","E07","E08","E09","E10","E11","E12","E13","E14","E15","E16","E17","E18","E19","E20","E21","E22","E23","E24","E25","E26","E27","E28","E29","E30","E31","E32","E33","E34","E35","E36","E37","E38","E39","E40","E41","E42","E43","E44","E45","E46","E47","E48","E49","E50","E51","E52","E53","E54","E55","E56","E57","E58","E59","E60","E61","E62","E63","E64","E65","E66","E67","E68","E69","E70","E71","E72","E73","E74","E75","E76","E77","E78","E79","E80","E81","E82","E83","E84","E85","E86","E87","E88","E89","E90","E91","E92","E93","E94","E95","E96","E97","E98","E99","E100"
-]
+EPISODES=["E01","E02","E03","E04","E05","E06","E07","E08","E09","E10","E11","E12","E13","E14","E15","E16","E17","E18","E19","E20","E21","E22","E23","E24","E25","E26","E27","E28","E29","E30"]
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
