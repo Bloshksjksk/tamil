@@ -928,7 +928,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
     seas1 = "E01" if seas == "EPISODE 01" else "E02" if seas == "EPISODE 02" else "E03" if seas == "EPISODE 03" else "E04" if seas == "EPISODE 04" else "E05" if seas == "EPISODE 05" else "E06" if seas == "EPISODE 06" else "E07" if seas == "EPISODE 07" else "E08" if seas == "EPISODE 08" else "E09" if seas == "EPISODE 09" else "E10" if seas == "EPISODE 10" else "E11" if seas =="EPISODE 11" else "E11" if seas =="EPISODE 12"else "E13" if seas =="EPISODE 13"else "E14" if seas =="EPISODE 14"else "E15" if seas == "EPISODE 15" else "E16" if seas == "EPISODE 16" else "E17" if seas == "EPISODE 17" else "E18" if seas == "EPISODE 18" else "E19" if seas == "EPISODE 19" else "E20" if seas =="EPISODE 21" else "E22" if seas =="EPISODE 22"else "E23" if seas =="EPISODE 23"else "E24" if seas =="EPISODE 24"else "E25" if seas =="EPISODE 25"else "E26" if seas =="EPISODE 26"else "E27" if seas =="EPISODE 27"else "E28" if seas =="EPISODE 28"else "E29" if seas =="EPISODE 29"else "E30" if seas =="EPISODE 30" else""
     search1 = f"{search1} {seas1}"
     BUTTONS1[key] = search1
-    files1, _, _ = await get_search_results(chat_id, search1, max_results=0)
+    files1, _, _ = await get_search_results(chat_id, search1, max_results=10)
     files1 = [file for file in files1 if re.search(seas1, file.file_name, re.IGNORECASE)]
     
     if files1:
@@ -937,7 +937,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
     seas2 = "E01" if seas == "EPISODE 01" else "E02" if seas == "EPISODE 02" else "E03" if seas == "EPISODE 03" else "E04" if seas == "EPISODE 04" else "E05" if seas == "EPISODE 05" else "E06" if seas == "EPISODE 06" else "E07" if seas == "EPISODE 07" else "E08" if seas == "EPISODE 08" else "E09" if seas == "EPISODE 09" else "E10" if seas == "EPISODE 10" else "E11" if seas =="EPISODE 11" else "E11" if seas =="EPISODE 12"else "E13" if seas =="EPISODE 13"else "E14" if seas =="EPISODE 14"else "E15" if seas == "EPISODE 15" else "E16" if seas == "EPISODE 16" else "E17" if seas == "EPISODE 17" else "E18" if seas == "EPISODE 18" else "E19" if seas == "EPISODE 19" else "E20" if seas =="EPISODE 21" else "E22" if seas =="EPISODE 22"else "E23" if seas =="EPISODE 23"else "E24" if seas =="EPISODE 24"else "E25" if seas =="EPISODE 25"else "E26" if seas =="EPISODE 26"else "E27" if seas =="EPISODE 27"else "E28" if seas =="EPISODE 28"else "E29" if seas =="EPISODE 29"else "E30" if seas =="EPISODE 30" else ""
     search2 = f"{search2} {seas2}"
     BUTTONS2[key] = search2
-    files2, _, _ = await get_search_results(chat_id, search2, max_results=0)
+    files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
     files2 = [file for file in files2 if re.search(seas2, file.file_name, re.IGNORECASE)]
 
     if files2:
