@@ -1,15 +1,9 @@
-FROM python:3.9-slim-buster
+FROM python:3.9
 
-
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
-
-RUN pip install -U -r requirements.txt
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt /app/
+RUN pip3 install -r requirements.txt
+COPY . /app
 
-CMD ["python", "bot.py"]
-#EXPOSE 80/tcp
-EXPOSE 80
+CMD gunicorn app:app & python3 bot.py
