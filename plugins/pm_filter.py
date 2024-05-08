@@ -66,7 +66,7 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - https://t.me/+bV585f2E4N5hNjI9 </b>")
+            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - https://t.me/+PBumvx-e43I4ZTE1 </b>")
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -76,8 +76,8 @@ async def pm_text(bot, message):
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
     if user_id in ADMINS: return # ignore admins
     await message.reply_text(
-         text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ <a href=https://t.me/mcumoviesr>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url="https://t.me/+bV585f2E4N5hNjI9")]])
+         text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏur request {content} available here ʜᴇʀᴇ. Take it from here <a href=https://t.me/+PBumvx-e43I4ZTE1>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url="https://t.me/+PBumvx-e43I4ZTE1")]])
     )
     await bot.send_message(
         chat_id=LOG_CHANNEL,
@@ -140,7 +140,7 @@ async def next_page(bot, query):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )         
         btn.insert(0, [
@@ -165,7 +165,7 @@ async def next_page(bot, query):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -394,7 +394,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )
         btn.insert(0, [
@@ -419,7 +419,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )
         btn.insert(0, [
@@ -600,7 +600,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -798,7 +798,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -960,7 +960,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, [
             InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}"),
-            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
+            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"ep#{key}")
         ])
     else:
         btn = []
