@@ -1604,7 +1604,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/+90o8iH1W21IwNTY1")
+                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/+PBumvx-e43I4ZTE1")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1629,7 +1629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/+90o8iH1W21IwNTY1")
+                 InlineKeyboardButton("Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ Lɪɴᴋ", url="https://t.me/+PBumvx-e43I4ZTE1")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -2114,7 +2114,8 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
@@ -2138,7 +2139,8 @@ async def auto_filter(client, msg, spoll=False):
         btn = []
         btn.insert(0,
             [
-                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") 
+                 InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}"),
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
             ]
                   )   
 
