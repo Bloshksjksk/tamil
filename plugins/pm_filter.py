@@ -575,7 +575,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -2128,7 +2128,7 @@ async def auto_filter(client, msg, spoll=False):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -2153,7 +2153,7 @@ async def auto_filter(client, msg, spoll=False):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
