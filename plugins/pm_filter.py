@@ -127,7 +127,7 @@ async def next_page(bot, query):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -152,7 +152,7 @@ async def next_page(bot, query):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -381,7 +381,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -406,7 +406,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -562,7 +562,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -587,7 +587,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -785,7 +785,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -838,7 +838,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
 
     
-@Client.on_callback_query(filters.regex(r"^ep#"))
+@Client.on_callback_query(filters.regex(r"^epi#"))
 async def seasons_cb_handler(client: Client, query: CallbackQuery):
 
     try:
@@ -864,11 +864,11 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         btn.append([
             InlineKeyboardButton(
                 text=EPISODES[i].title(),
-                callback_data=f"fs#{EPISODES[i].lower()}#{key}"
+                callback_data=f"ep#{EPISODES[i].lower()}#{key}"
             ),
             InlineKeyboardButton(
                 text=EPISODES[i+1].title(),
-                callback_data=f"fs#{EPISODES[i+1].lower()}#{key}"
+                callback_data=f"ep#{EPISODES[i+1].lower()}#{key}"
             ),
         ])
 
@@ -960,14 +960,14 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, [
             InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥✅", callback_data=f"sendfiles#{key}"),
-            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"ep#{key}")
+            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"epi#{key}")
         ])
     else:
         btn = []
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}"),
-                InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -980,7 +980,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0,
             [
-                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Etra Filters ⬇️', 'select')  
+                  InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ Extra Filters ⬇️', 'select')  
             ]
                   )   
         btn.insert(0, [
@@ -2115,7 +2115,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}") ,
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
@@ -2140,7 +2140,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0,
             [
                  InlineKeyboardButton("Quality👁",  callback_data=f"quality#{key}"),
-                 InlineKeyboardButton("Episodes🔢",  callback_data=f"ep#{key}")
+                 InlineKeyboardButton("Episodes🔢",  callback_data=f"epi#{key}")
             ]
                   )   
 
