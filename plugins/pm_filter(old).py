@@ -839,7 +839,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     
 @Client.on_callback_query(filters.regex(r"^epi#"))
-async def seasons_cb_handler(client: Client, query: CallbackQuery):
+async def episodes_cb_handler(client: Client, query: CallbackQuery):
 
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
