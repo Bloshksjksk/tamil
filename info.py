@@ -21,6 +21,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "7085406246:AAFeeHZ48_DP6lXw-g6-xnDrMKiC39D
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
+PM_SEARCH = bool(environ.get('PM_SEARCH', True)) # In Pm Search Currently Spell Check Doesn't Work.
 PICS = (environ.get('PICS', 'https://graph.org/file/4c6675982743892329077.png')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://te.legra.ph/file/6f55d902f9bf2d0afd4bb.mp4")
